@@ -1,0 +1,18 @@
+.testimonials{padding:100px 6vw;background:var(--silver-pale);position:relative;overflow:hidden}
+.testimonials::before{content:'"';position:absolute;top:20px;left:6vw;font-family:var(--font-head);font-size:280px;color:rgba(107,33,168,.05);line-height:1;pointer-events:none;user-select:none}
+
+.testimonials__slider{position:relative;min-height:300px;max-width:780px;margin:0 auto 40px}
+
+.testimonial-card{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none;text-align:center;padding:0 20px}
+.testimonial-card--active{opacity:1;transform:translateY(0);pointer-events:auto}
+
+.testimonial-card__stars{font-size:20px;color:var(--purple);letter-spacing:4px;margin-bottom:24px}
+.testimonial-card__text{font-family:var(--font-sub);font-size:clamp(19px,2.5vw,26px);font-style:italic;color:var(--text-dark);line-height:1.75;margin-bottom:30px}
+.testimonial-card__author{display:flex;align-items:center;justify-content:center;gap:14px}
+.testimonial-card__author img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2.5px solid var(--purple);box-shadow:0 0 0 3px var(--purple-faint)}
+.testimonial-card__author strong{display:block;font-size:14px;font-weight:600;color:var(--text-dark)}
+.testimonial-card__author span{font-size:12px;color:var(--text-muted)}
+
+.testimonials__dots{display:flex;justify-content:center;gap:10px}
+.testimonials__dot{width:8px;height:8px;border-radius:50%;background:var(--silver-light);border:none;transition:all .3s}
+.testimonials__dot--active{background:var(--purple);width:28px;border-radius:4px;box-shadow:0 0 10px rgba(107,33,168,.3)}

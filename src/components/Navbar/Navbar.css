@@ -1,0 +1,181 @@
+/*
+  BREAKPOINTS
+  xs  ≤479px      phone (small)
+  sm  480–767px   phone
+  md  768–1023px  tablet
+  lg  ≥1024px     laptop / desktop  ← full menu
+*/
+
+/* ═══ Base (lg desktop) ═══════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 6vw;
+  transition: all .4s ease;
+}
+nav.scrolled {
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 8px 6vw;
+  border-bottom: 1px solid rgba(107,33,168,.12);
+  box-shadow: 0 4px 30px rgba(107,33,168,.08);
+}
+
+/* Logo */
+.nav-logo { display: flex; align-items: center; cursor: pointer; }
+.nav-logo-img {
+  height: 80px; width: auto; object-fit: contain; display: block;
+  transition: height .3s ease;
+}
+nav.scrolled .nav-logo-img { height: 68px; }
+
+/* Hero mode — white text over dark image */
+.nav-hero .nav-link         { color: rgba(255,255,255,.85) !important; }
+.nav-hero .nav-link:hover,
+.nav-hero .nav-link.active  { color: #fff !important; }
+.nav-hero .nav-link::after  { background: rgba(255,255,255,.8); }
+
+/* ── Desktop nav links (visible on lg) ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* reset any mobile overrides */
+  position: static;
+  transform: none;
+  width: auto; height: auto;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  flex-direction: row;
+}
+
+.nav-link {
+  background: none; border: none;
+  color: var(--text-mid);
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 100px;
+  transition: all .3s; position: relative;
+  white-space: nowrap;
+}
+.nav-link::after {
+  content: ''; position: absolute;
+  bottom: 4px; left: 50%;
+  width: 0; height: 2px;
+  background: var(--purple);
+  transform: translateX(-50%);
+  transition: width .3s ease; border-radius: 2px;
+}
+.nav-link:hover, .nav-link.active          { color: var(--purple); }
+.nav-link:hover::after, .nav-link.active::after { width: 50%; }
+
+.nav-cta {
+  background: linear-gradient(135deg, #4C1D95, #9333EA);
+  color: #fff; font-size: 12px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 24px; border-radius: 100px;
+  margin-left: 8px; border: none;
+  transition: all .3s;
+  box-shadow: 0 4px 20px rgba(107,33,168,.3);
+  white-space: nowrap;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(107,33,168,.4); }
+
+/* ── Burger (hidden on desktop) ── */
+.nav-burger {
+  display: none;                /* HIDDEN on lg */
+  flex-direction: column; gap: 5px;
+  background: none; border: none; padding: 8px;
+  z-index: 1002; cursor: pointer;
+}
+.nav-burger span {
+  display: block; width: 26px; height: 2.5px;
+  background: #fff;                       /* default: white (over dark hero) */
+  border-radius: 2px; transition: all .3s; transform-origin: center;
+}
+/* when navbar scrolls onto white sections → purple lines */
+nav.scrolled .nav-burger span { background: var(--purple); }
+.nav-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+
+/* ═══════════════════════════════════════════════════════
+   md + sm + xs  (≤1023px)  →  HAMBURGER MENU
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+
+  /* Show burger */
+  .nav-burger { display: flex; }
+
+  /* Hide links — push off-screen */
+  .nav-links {
+    position: fixed;
+    top: 0; right: 0;
+    width: 280px; height: 100vh;
+    background: rgba(255,255,255,.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 36px 48px;
+    gap: 0;
+    transform: translateX(100%);          /* hidden off-screen */
+    transition: transform .4s ease;
+    border-left: 1px solid rgba(107,33,168,.1);
+    box-shadow: -8px 0 40px rgba(107,33,168,.12);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+  .nav-links.open { transform: translateX(0); } /* slide in */
+
+  .nav-link {
+    font-size: 16px; padding: 14px 0;
+    color: var(--text-dark) !important;
+    width: 100%; border-radius: 0;
+    border-bottom: 1px solid rgba(107,33,168,.08);
+  }
+  .nav-link:hover, .nav-link.active { color: var(--purple) !important; padding-left: 8px; }
+  .nav-link::after { display: none; }
+
+  .nav-cta {
+    margin-left: 0; margin-top: 24px;
+    width: 100%; text-align: center; display: block;
+    padding: 12px 24px;
+  }
+}
+
+/* ── md tablet (768–1023) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav { padding: 10px 4vw; }
+  nav.scrolled { padding: 8px 4vw; }
+  .nav-logo-img { height: 64px; }
+  nav.scrolled .nav-logo-img { height: 54px; }
+}
+
+/* ── sm phone (480–767) ── */
+@media (min-width: 480px) and (max-width: 767px) {
+  nav { padding: 8px 4vw; }
+  nav.scrolled { padding: 6px 4vw; }
+  .nav-logo-img { height: 56px; }
+  nav.scrolled .nav-logo-img { height: 46px; }
+  .nav-links { width: 100%; border-left: none; }
+}
+
+/* ── xs small phone (≤479) ── */
+@media (max-width: 479px) {
+  nav { padding: 6px 4vw; }
+  nav.scrolled { padding: 4px 4vw; }
+  .nav-logo-img { height: 46px; }
+  nav.scrolled .nav-logo-img { height: 38px; }
+  .nav-links {
+    width: 100%;
+    border-left: none;
+    box-shadow: 0 8px 40px rgba(107,33,168,.12);
+    padding: 90px 24px 40px;
+  }
+  .nav-link { font-size: 15px; padding: 12px 0; }
+}

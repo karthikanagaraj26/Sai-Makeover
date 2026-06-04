@@ -1,0 +1,44 @@
+.footer{
+  background: #2D0060;
+  padding: 72px 6vw 0;
+}
+.footer__inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.2)}
+
+.footer__logo-img{
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: screen;
+  filter: brightness(1.4) contrast(1.1);
+}
+.footer__brand p{font-size:14px;color:rgba(203,213,225,.7);line-height:1.75;margin-top:16px;max-width:300px}
+.footer__logo{display:flex;align-items:center;gap:10px}
+.footer__logo-icon{font-size:20px;background:linear-gradient(135deg,#fff,var(--silver-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer__logo-text{font-family:var(--font-head);font-size:22px;font-weight:700;color:#fff}
+.footer__logo-text em{font-style:italic;background:linear-gradient(135deg,var(--silver-light),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.footer__col strong{display:block;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(203,213,225,.6);margin-bottom:20px}
+.footer__col ul{display:flex;flex-direction:column;gap:10px}
+.footer__col li{font-size:13px;color:rgba(203,213,225,.65)}
+.footer__col li button{font-size:13px;color:rgba(203,213,225,.65);background:none;border:none;padding:0;text-align:left;transition:color .2s}
+.footer__col li button:hover{color:#fff}
+
+.footer__bottom{padding:24px 0;text-align:center;max-width:1200px;margin:0 auto}
+.footer__bottom p{font-size:12px;color:rgba(255,255,255,.2);letter-spacing:1px}
+
+/* md tablet */
+@media (max-width:1023px) {
+  .footer__inner { grid-template-columns:1fr 1fr; gap:36px; }
+  .footer        { padding:56px 5vw 0; }
+}
+/* sm phone */
+@media (max-width:767px) {
+  .footer__inner  { grid-template-columns:1fr; gap:32px; }
+  .footer__logo-img { height:88px; }
+}
+/* xs */
+@media (max-width:479px) {
+  .footer { padding:48px 4vw 0; }
+  .footer__logo-img { height:72px; }
+}

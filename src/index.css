@@ -1,0 +1,69 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+:root{
+  --purple:        #6B21A8;
+  --purple-light:  #9333EA;
+  --purple-dark:   #4C1D95;
+  --purple-pale:   #F5F0FF;
+  --purple-faint:  #FAF7FF;
+  --silver:        #94A3B8;
+  --silver-light:  #CBD5E1;
+  --silver-dark:   #64748B;
+  --silver-pale:   #F1F5F9;
+  --white:         #FFFFFF;
+  --off-white:     #FDFCFF;
+  --text-dark:     #1E0A3C;
+  --text-mid:      #6B4E8A;
+  --text-muted:    #9B8AAA;
+  --border:        rgba(107,33,168,0.12);
+  --border-silver: rgba(148,163,184,0.25);
+
+  --font-head: 'Playfair Display', Georgia, serif;
+  --font-sub:  'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+
+  --shadow-sm:  0 2px 12px rgba(107,33,168,0.08);
+  --shadow-md:  0 6px 30px rgba(107,33,168,0.13);
+  --shadow-lg:  0 16px 60px rgba(107,33,168,0.16);
+  --shadow-card:0 4px 24px rgba(107,33,168,0.10);
+
+  --ease:   cubic-bezier(.25,.46,.45,.94);
+  --ease-s: cubic-bezier(.34,1.56,.64,1);
+}
+
+body{
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  cursor: none;
+}
+
+#root{
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{border:none;cursor:none;font-family:var(--font-body);background:none}
+
+::selection{background:var(--purple);color:#fff}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--white)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--purple),var(--silver-light));border-radius:3px}
+
+@media(max-width:768px){
+  body,button,a{cursor:auto}
+}

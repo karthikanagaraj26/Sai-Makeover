@@ -1,0 +1,44 @@
+/* Makeup brush cursor */
+.cursor-brush {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 36px;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transform: translate(0, 0);
+  filter: drop-shadow(0 2px 6px rgba(107, 33, 168, 0.4));
+  transition: filter 0.2s;
+}
+
+/* Trailing ring */
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(107, 33, 168, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  transform: translate(-50%, -50%);
+  transition:
+    width  0.3s ease,
+    height 0.3s ease,
+    border-color 0.3s,
+    background   0.3s;
+}
+
+/* Hover: ring expands + glows */
+.cursor-ring.cursor--hover {
+  width: 60px; height: 60px;
+  border-color: var(--purple-light);
+  background: rgba(107, 33, 168, 0.06);
+  box-shadow: 0 0 16px rgba(107, 33, 168, 0.2);
+}
+
+/* Hide on touch / tablet */
+@media (max-width: 1023px) {
+  .cursor-brush,
+  .cursor-ring { display: none; }
+}
