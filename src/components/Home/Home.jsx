@@ -62,7 +62,7 @@ export default function Home() {
       <div className="hero-content">
         <div className="hero-eyebrow">
           <span className="hero-eyebrow-line" />
-          Since 2014 · Premium Beauty Parlour
+          Since 2025 · Premium Beauty Parlour
           <span className="hero-eyebrow-line r" />
         </div>
 

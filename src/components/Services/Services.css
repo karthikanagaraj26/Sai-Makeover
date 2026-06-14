@@ -21,7 +21,6 @@
 .service-card__img-wrap{position:relative;height:62%;overflow:hidden}
 .service-card__img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
 .service-card__inner--flipped .service-card__img-wrap img{transform:scale(1.07)}
-.service-card__img-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(255,255,255,.9) 100%)}
 
 .service-card__front-content{padding:18px 22px;position:relative}
 .service-card__tag{

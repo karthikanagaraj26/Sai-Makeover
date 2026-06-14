@@ -39,7 +39,7 @@ export default function About() {
           <h2 className="section-title">Born to Celebrate<br /><em>Indian Beauty</em></h2>
           <div className="divider" />
           <p className="about__desc">
-            Founded in 2014, Sai Makeover began with one simple belief — every Indian woman carries a
+            Founded in 2025, Sai Makeover began with one simple belief — every Indian woman carries a
             unique, timeless beauty that deserves to be celebrated. From a modest studio to a full-service
             luxury parlour, our journey has been fuelled by the trust of thousands of women who became family.
           </p>

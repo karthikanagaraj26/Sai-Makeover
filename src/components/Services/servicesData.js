@@ -31,8 +31,8 @@ export const SERVICES = [
     tag:   'Hand Care',
     icon:  '💎',
     price: 'From ₹299',
-    /* hands / nail care */
-    img:   'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500&q=80',
+    /* hands / manicure spa */
+    img:   'https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=500&q=80',
     desc:  'Hand soak, exfoliation, cuticle treatment, nail buffing and shape — topped with a nourishing hand massage. Soft, well-groomed hands that speak for themselves.',
   },
   {
@@ -50,7 +50,7 @@ export const SERVICES = [
     icon:  '👰',
     price: 'From ₹3,999',
     /* Indian bridal makeup */
-    img:   'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=500&q=80',
+    img:   'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&q=80',
     desc:  'Airbrush foundation, HD base, dramatic eyes, perfect lip art and all-day setting. Covers full bridal, engagement, reception and mehendi looks.',
   },
   {

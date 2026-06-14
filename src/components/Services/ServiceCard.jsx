@@ -16,7 +16,6 @@ export default function ServiceCard({ service, index }) {
         <div className="service-card__front">
           <div className="service-card__img-wrap">
             <img src={service.img} alt={service.title} loading="lazy" />
-            <div className="service-card__img-overlay" />
           </div>
           <div className="service-card__front-content">
             <span className="service-card__tag">{service.tag}</span>
