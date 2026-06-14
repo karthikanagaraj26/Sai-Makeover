@@ -1,4 +1,5 @@
 import { useReveal } from '../../hooks/useReveal'
+import aboutImg from '../../assets/about.png'
 import './About.css'
 
 const FEATURES = [
@@ -21,7 +22,7 @@ export default function About() {
         <div className={`about__image-wrap ${visible ? 'reveal-left visible' : 'reveal-left'}`}>
           <div className="about__image-frame">
             <img
-              src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&q=85"
+              src={aboutImg}
               alt="Sai Makeover"
               loading="lazy"
             />
