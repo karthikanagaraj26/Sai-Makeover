@@ -46,6 +46,19 @@ export default function Footer() {
           </ul>
         </div>
 
+        <div className="footer__col">
+          <strong>Visit Us</strong>
+          <ul>
+            <li className="footer__address">
+              📍 123, Beauty Lane,<br />
+              Near Main Market<br />
+              Your City – 500 001
+            </li>
+            <li>📞 +91 98765 43210</li>
+            <li>🕐 Mon – Sat: 9 AM – 8 PM<br />Sun: 10 AM – 6 PM</li>
+          </ul>
+        </div>
+
       </div>
 
       <div className="footer__bottom">
